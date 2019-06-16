@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>helloworld-maven-plugin-parent</artifactId>
+        <groupId>com.ypy.maven</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>helloworld-maven-plugin-son-test</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.ypy.maven</groupId>
+                <artifactId>helloworld-maven-plugin-son</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <!--将自定义插件和生命周期级别的插件，绑定-->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>helloworldson</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <msg>this is hello world!</msg>
+                    <options>
+                        <option>one array</option>
+                        <option>two array</option>
+                    </options>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
